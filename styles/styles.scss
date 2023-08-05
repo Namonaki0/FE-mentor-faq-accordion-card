@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+$text-blue: hsl(238, 29%, 16%);
+$highlight: hsl(14, 88%, 65%);
+$text-dark-gray: hsl(237, 12%, 33%);
+$text-gray-blue: hsl(240, 6%, 50%);
+$bg-violet: hsl(273, 75%, 66%);
+$bg-blue: hsl(240, 73%, 65%);
+$divider: hsl(240, 5%, 91%);
+$body-copy: 12px;
+$font-style: "Kumbh Sans", sans-serif;
+$transition-effect: all 160ms linear;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-style;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  overflow-y: hidden;
+  background: linear-gradient($bg-violet, hsl(266, 90%, 55%)) no-repeat;
+
+  main {
+    width: 350px;
+    height: 580px;
+    border-radius: 25px;
+    padding: 5rem 1.5rem;
+    position: relative;
+    box-shadow: 0 35px 16px -10px #110f0f4d;
+    // background: url("../images/illustration-woman-online-mobile.svg") no-repeat, url("../images/bg-pattern-mobile.svg") no-repeat;
+    // background-size: 80%, 80%;
+    // background-position: 20px -100px, 0px;
+    background-color: white;
+
+    &::before {
+        display: none;
+
+      @media (min-width: 1440px) {
+        content: "";
+        display: block;
+        background: url("../images/illustration-box-desktop.svg") no-repeat;
+        position: absolute;
+        transform: translate(-19%, 24%);
+        width: 100%;
+        height: 100%;
+        background-size: 22%;
+        pointer-events: none;
+        animation: boxAnimation 3s linear infinite;
+
+        @keyframes boxAnimation {
+          0%{
+              transform: translate(-19%, 23%)
+          }
+          50% {
+              transform: translate(-19%, 24%)
+          }
+          100% {
+              transform: translate(-19%, 23%)
+          }
+        }
+      }
+
+    }
+
+    // &::after {
+
+    // }
+
+    @media (min-width: 1440px) {
+      display: flex;
+      padding: 3.5rem 4rem 4.5rem;
+      width: 750px;
+      height: 450px;
+      background: url("../images/illustration-woman-online-desktop.svg") no-repeat, url("../images/bg-pattern-desktop.svg") no-repeat;
+      background-color: white;
+      background-size: 45%, 110%;
+      background-position:  -50px 80px, -540px -250px;
+    }
+
+    .image-wrapper {
+      width: 90%;
+      margin: 0 auto;
+
+      @media (min-width: 1440px) {
+        margin: unset;
+      }
+
+      .main-image {
+        margin-top: -162px;
+
+        @media (min-width: 1440px) {
+          width: 130%;
+          margin-top: 18px;
+          margin-left: -130px;
+        }
+      }
+
+      .box-image {
+        display: none;
+
+        @media (min-width: 1440px) {
+          position: absolute;
+          display: block;
+          top: 10px;
+          left: -50px;
+          float: unset;
+          width: 120px;
+        }
+      }
+
+      .image-shadow {
+        position: absolute;
+        top: 45px;
+        left: 40px;
+        width: 78%;
+
+        @media (min-width: 1440px) {
+          z-index: 1;
+          display: unset;
+          width: 120%;
+          top: 180px;
+          left: -620px;
+        }
+      }
+    }
+
+    .faq-wrapper {
+      @media (min-width: 1440px) {
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+      }
+
+      h1 {
+        margin: 1.5rem;
+        margin-top: 3.5rem;
+        margin-bottom: 2.2rem;
+        text-align: center;
+
+        @media (min-width: 1440px) {
+          margin-left: 0;
+          text-align: left;
+          height: max-content;
+          margin-top: 0;
+        }
+      }
+
+      ul {
+        list-style: none;
+
+        li {
+          border-bottom: 1px solid $divider;
+          margin-bottom: 1rem;
+          font-size: $body-copy;
+          padding-bottom: 1rem;
+          cursor: pointer;
+          animation: $transition-effect;
+
+          &:hover {
+            .question {
+              color: $highlight;
+            }
+          }
+
+          .question {
+            display: flex;
+            align-items: center;
+            color: $text-dark-gray;
+            font-weight: 300;
+            font-size: 14px;
+            pointer-events: none;
+            animation: $transition-effect;
+
+            &.clicked-question {
+              font-weight: 700;
+            }
+          }
+
+          .answer {
+            visibility: hidden;
+            height: 0;
+            opacity: 0;
+            color: $text-gray-blue;
+            line-height: 18px;
+            width: 95%;
+            transition: $transition-effect;
+
+            &.open-answer {
+              visibility: unset;
+              height: max-content;
+              margin-top: 0.6rem;
+              opacity: 1;
+            }
+          }
+
+          .arrow {
+            margin-left: auto;
+            display: block;
+            transition: $transition-effect;
+
+            &.arrow-animation {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}
