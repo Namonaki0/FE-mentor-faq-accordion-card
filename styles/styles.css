@@ -11,19 +11,34 @@ body {
   display: grid;
   place-content: center;
   overflow-y: hidden;
-  background: linear-gradient(hsl(273deg, 75%, 66%), hsl(266deg, 90%, 55%)) no-repeat;
+  background: linear-gradient(hsl(273deg, 75%, 66%), hsl(266deg, 90%, 55%));
+}
+@media (min-width: 1440px) {
+  body {
+    background: linear-gradient(hsl(273deg, 75%, 66%), hsl(240deg, 73%, 65%) 90%);
+  }
 }
 body main {
   width: 350px;
   height: 580px;
   border-radius: 25px;
-  padding: 5rem 1.5rem;
+  padding: 6rem 1.5rem;
+  margin-top: 5rem;
   position: relative;
-  box-shadow: 0 35px 16px -10px rgba(17, 15, 15, 0.3019607843);
+  box-shadow: 0 35px 26px -10px rgba(17, 15, 15, 0.3019607843);
+  background: url("../images/bg-pattern-mobile.svg") 45px 0px no-repeat;
   background-color: white;
+  background-size: 75%;
 }
 body main::before {
-  display: none;
+  content: "";
+  display: block;
+  position: absolute;
+  background: url("../images/illustration-woman-online-mobile.svg") no-repeat;
+  transform: translate(8%, -37%);
+  width: 75%;
+  height: 100%;
+  pointer-events: none;
 }
 @media (min-width: 1440px) {
   body main::before {
@@ -56,10 +71,11 @@ body main::before {
     padding: 3.5rem 4rem 4.5rem;
     width: 750px;
     height: 450px;
+    margin-top: 0;
     background: url("../images/illustration-woman-online-desktop.svg") no-repeat, url("../images/bg-pattern-desktop.svg") no-repeat;
     background-color: white;
     background-size: 45%, 110%;
-    background-position: -50px 80px, -540px -250px;
+    background-position: -50px 75px, -540px -270px;
   }
 }
 body main .image-wrapper {
@@ -118,17 +134,16 @@ body main .image-wrapper .image-shadow {
   }
 }
 body main .faq-wrapper h1 {
-  margin: 1.5rem;
-  margin-top: 3.5rem;
-  margin-bottom: 2.2rem;
+  margin: 3rem 1.5rem 2.8rem;
   text-align: center;
 }
 @media (min-width: 1440px) {
   body main .faq-wrapper h1 {
+    margin-top: 0;
     margin-left: 0;
+    margin-bottom: 2rem;
     text-align: left;
     height: max-content;
-    margin-top: 0;
   }
 }
 body main .faq-wrapper ul {
@@ -141,6 +156,7 @@ body main .faq-wrapper ul li {
   padding-bottom: 1rem;
   cursor: pointer;
   animation: all 160ms linear;
+  overflow: hidden;
 }
 body main .faq-wrapper ul li:hover .question {
   color: hsl(14deg, 88%, 65%);
@@ -159,17 +175,17 @@ body main .faq-wrapper ul li .question.clicked-question {
 }
 body main .faq-wrapper ul li .answer {
   visibility: hidden;
-  height: 0;
   opacity: 0;
+  height: 0;
   color: hsl(240deg, 6%, 50%);
   line-height: 18px;
   width: 95%;
   transition: all 160ms linear;
 }
 body main .faq-wrapper ul li .answer.open-answer {
-  visibility: unset;
   height: max-content;
   margin-top: 0.6rem;
+  visibility: unset;
   opacity: 1;
 }
 body main .faq-wrapper ul li .arrow {

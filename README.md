@@ -1,20 +1,22 @@
-# Frontend Mentor - QR code component solution
+# Frontend Mentor - FAQ Accordion Card solution
 
-[![Netlify Status]()]()
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4876be14-c91e-45b8-aa1d-fc26cce0527e/deploy-status)](https://app.netlify.com/sites/fementor-af-faq-accordion-card/deploys)
 
 ---
 
-This is a solution to the [FAQ Accordion Card]().
+This is a solution to the [FAQ Accordion Card](https://www.frontendmentor.io/solutions/faq-accordion-card-html-scss-javascript-dxqOiJLs28).
 
 ### Screenshot
 
 ![mobile](./completed_screenshots/mobile.PNG)
+![mobile open state](./completed_screenshots/mobile_open.PNG)
 ![desktop](./completed_screenshots/desktop.PNG)
+![desktop open state](./completed_screenshots/desktop_open.PNG)
 
 ### Links
 
-- Solution URL: []()
-- Live Site URL: []()
+- Solution URL: [https://github.com/Namonaki0/FE-mentor-faq-accordion-card](https://github.com/Namonaki0/FE-mentor-faq-accordion-card)
+- Live Site URL: [https://fementor-af-faq-accordion-card.netlify.app](https://fementor-af-faq-accordion-card.netlify.app)
 
 ## My process
 
