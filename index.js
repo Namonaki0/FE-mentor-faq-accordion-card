@@ -32,6 +32,36 @@ listItems.forEach((item, i) => {
   });
 });
 
+// KEYBOARD NAVIGATION
+questions.forEach((question, i) => {
+  question.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      questions[i].classList.toggle("clicked-question");
+      answers[i].classList.toggle("open-answer");
+      arrows[i].classList.toggle("arrow-animation");
+    }
+    // active font-weight on click
+    questions.forEach((q, index) => {
+      if (index !== i) {
+        q.classList.remove("clicked-question");
+      }
+    });
+
+    answers.forEach((answer, index) => {
+      if (index !== i) {
+        answer.classList.remove("open-answer");
+      }
+    });
+
+    // arrow default to initial state
+    arrows.forEach((arrow, index) => {
+      if (index !== i) {
+        arrow.classList.remove("arrow-animation");
+      }
+    });
+  });
+});
+
 document.addEventListener("click", (e) => {
   if (!e.target.dataset.id) {
     answers.forEach((answer, i) => {
@@ -43,5 +73,3 @@ document.addEventListener("click", (e) => {
     });
   }
 });
-
-console.dir(main);
